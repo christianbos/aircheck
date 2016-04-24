@@ -1,0 +1,145 @@
+body,html{
+	margin: 0;
+	padding:0;
+	height: 100%;
+	width: 100%;
+	font-size: 1.3rem;
+  	line-height: 1.5;
+	font-family: 'Roboto', sans-serif;
+	color: #fff;
+    -webkit-font-smoothing: antialiased;
+}
+.depth-gauge{
+	height: 3001px;// 30ft high
+	// Major Flood Stage: 22ft
+	// Moderate Flood Stage: 15ft
+	// Flood Stage: 12ft
+	// Action Stage: 9ft
+	position: relative;
+	background: linear-gradient(to top, darken(#09b7bf, 20%) 0%, #09b7bf 15%, #90d36b 30%, #f2d40d 40%, #fcb12b 50%, #ed1b72 73%, #754fa0 100%);
+	.ruler{
+		opacity: 0.6;
+	}
+	.label{
+		color: rgba(white, 0.8);
+		font-size: 0.4rem;
+		text-transform: uppercase;
+		font-weight: 700;
+		position: absolute;
+		left: 35px;
+
+		@for $i from 1 through 30 {
+			&.-ft-#{$i} {
+				bottom: calc(#{$i}98px - 100px);
+			}
+		}
+	}
+
+
+	.record,
+	.category{
+		position: absolute;
+		border-bottom: 1px dotted rgba(white,0.4);
+		width: 100%;
+		display: block;
+		height: 1px;
+
+		.-date,
+		.-title{
+			color: rgba(white, 0.7);
+			font-size: 0.5rem;
+			position: absolute;
+			right: 5px;
+			top: 2px;
+			font-weight: 300;
+		}
+		.-title{
+			font-weight: 700;
+			color: white;
+		}
+
+		&.-rd-1972{
+			bottom: 2862px;
+		}
+		&.-rd-1969{
+			bottom: 2495px;
+		}
+		&.-rd-1985{
+			bottom: 2477px;
+		}
+		&.-rd-1936{
+			bottom: 2342px;
+		}
+		&.-rd-1937{
+			bottom: 2265px;
+		}
+
+		&.-major{
+			bottom: 2200px;
+		}
+		&.-moderate{
+			bottom: 1500px;
+		}
+		&.-flood{
+			bottom: 1200px;
+		}
+		&.-action{
+			bottom: 900px;
+		}
+
+	}
+
+	.category{
+		border-bottom: 1px dashed white;
+	}
+}
+
+.depth{
+	width: 100%;
+	letter-spacing: -0.35rem;
+	position: absolute;
+	text-align: center;
+	transform: translateY(-50%);
+	bottom:0px;
+	font-size: 4.5rem;
+	font-weight: 100;
+	opacity:1;
+	z-index: 2;
+	line-height:0;
+
+	small{
+		font-size: 3rem;
+		letter-spacing: 0rem;
+		margin-left: 0.3rem;
+	}
+}
+.marker{
+	width: 0;
+	height: 0;
+	border-top: 5px solid transparent;
+	border-bottom: 5px solid transparent;
+	border-left: 5px solid white;
+	position: absolute;
+	transform: translateY(-50%);
+	top:50%;
+}
+
+.pad{
+	background: darken(#09b7bf, 20%);
+	height: 50vh;
+	display:block;
+	position: relative;
+
+	.-loader{
+		position: absolute;
+		text-align: center;
+		transform: translateY(-50%) translateX(-50%);
+		top:50%;
+		left: 50%;
+
+		p{
+			margin: 0;
+			font-size: 0.8rem;
+		}
+	}
+}

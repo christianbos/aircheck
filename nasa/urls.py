@@ -7,4 +7,7 @@ urlpatterns = [
     url(r'^main/',
         include('main.urls', namespace="main")),
 
+    url(r'^measurer/',
+        include('measurer.urls', namespace="measurer")),
+
 ]
