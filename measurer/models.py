@@ -10,4 +10,4 @@ class Gas(models.Model):
 
 
 class Temperature(models.Model):
-    celcius = models.FloatField(max_length=30, blank=True, null=True)
+    celsius = models.FloatField(max_length=30, blank=True, null=True)
